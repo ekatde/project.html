@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lange="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animals</title>
+</head>
+<body>
+    <h1>ТЕСТ: КАКОЙ АВТОМОБИЛЬ ВАМ ПОДХОДИТ</h1>
+    <div id="test">
+        <div>
+          <p><b>Укажите пол:</b></p>
+          <label>
+            <input type="radio" name="1" data-right> Женский </label>
+            <p></p>
+          <label>
+            <input type="radio" name="1"> Мужской </label>
+        </div>
+        
+        <div>
+          <p><b>Сколько вам лет?</b></p>
+          <label>
+            <input type="radio" name="2"> 18-25 </label>
+            <p></p>
+          <label>
+            <input type="radio" name="2" data-right> 25-35 </label>
+            <p></p>
+          <label>
+            <input type="radio" name="2"> Больше 35 </label>
+        </div>
+
+        <div>
+          <p><b>Важен ли статус при выборе автомобиля?</b></p>
+          <label>
+            <input type="radio" name="3"> Да, важен </label>
+            <p></p>
+          <label>
+            <input type="radio" name="3"> Не имеет значения </label>
+        </div>
+        
+        <div>
+            <p><b>Покупая автомобиль, на что вы обратите внимание в первую очередь?</b></p>
+            <label>
+              <input type="radio" name="4"> На комфорт и список опций</label>
+              <p></p>
+            <label>
+              <input type="radio" name="4"> На внешний вид</label>
+              <p></p>
+            <label>
+              <input type="radio" name="4"> На объём багажника и расход</label>
+              <p></p>
+            <label>
+              <input type="radio" name="4"> На динамику</label>
+              <p></p>
+            <label>
+              <input type="radio" name="4"> На эргономичность</label>
+          </div>
+          
+          <div>
+            <p><b>Что вас больше всего привлекает в дизайне автомобиля?</b></p>
+            <label>
+              <input type="radio" name="design" value="1"> Динамика и спортивная эстетика </label> 
+              <p></p>
+            <label>
+              <input type="radio" name="design" value="2"> Резкость и лаконичность </label>
+              <p></p>
+            <label>
+              <input type="radio" name="design" value="3"> Чистота, отсутствие лишних элементов </label>
+              <p></p>
+            <label>
+              <input type="radio" name="design" value="4"> Аккуратность и миниатюрность </label>
+              <p></p>
+            <label>
+              <input type="radio" name="design" value="5"> Простота </label>  
+          </div>
+      </div>
+      <div>
+        <p> </p>
+        <p> </p>
+        <button onclick="Message()"><b>Получить результат</b></button>
+        <script>
+          function Message() {
+            var radios = document.getElementsByName('design');
+            var selectedValue;
+
+            // Находим выбранное значение
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    selectedValue = radios[i].value;
+                    break;
+                }
+            }
+
+            // Выводим сообщение в зависимости от выбранного значения
+            if (selectedValue === '1') {
+                alert('Вам идеально подходит автомобиль марки - BMW!');
+            } else if (selectedValue === '2') {
+                alert('Вам идеально подходит автомобиль марки - Mitsubishi!');
+            } else if (selectedValue === '3') {
+                alert('Вам идеально подходит автомобиль марки - Mercedes!');
+            } else if (selectedValue === '4') {
+                alert('Вам идеально подходит автомобиль марки - MINI!');
+            } else if (selectedValue === '5') {
+                alert('Вам идеально подходит автомобиль марки - LADA!');
+            } else {
+                alert('Пожалуйста, выберите вариант');
+            }
+        }
+        </script>
+      </div>
+</body>
+</html>
